@@ -1,0 +1,16 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row"  style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <button class="btn btn-info" routerLink="/allfacilities">See All</button>
+            <form (ngSubmit)="updateFacilities()">
+                <input type="text" class="form-control" name="hfacname" placeholder="Facilities" [(ngModel)]="hf.hfacname" >
+                <input type="text" class="form-control" name="hfacdiscription" placeholder="Description" [(ngModel)]="hf.hfacdiscription">
+                <input type="text" class="form-control" name="hfackeyword" placeholder="Keyword" [(ngModel)]="hf.hfackeyword">
+                <button class="btn btn-info">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

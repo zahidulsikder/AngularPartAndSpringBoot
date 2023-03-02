@@ -1,0 +1,33 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">       
+            <h1 class="text-center">Roomtype</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Keyword</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rt of roomtypeList | async">
+                        <td>#{{rt.rtid}}</td>
+                        <td>{{rt.rtName}}</td>
+                        <td>{{rt.rtDescription}}</td>
+                        <td>{{rt.rtKey}}</td>
+                        <td>
+                            <button class="btn btn-success" (click)="updateRoomtype(rt.rtid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteRoomtype(rt.rtid)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

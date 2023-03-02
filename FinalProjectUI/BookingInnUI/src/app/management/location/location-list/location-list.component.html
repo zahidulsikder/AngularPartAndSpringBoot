@@ -1,0 +1,41 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">       
+            <h1 class="text-center">Location List</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Location Name</th>
+                        <th>Zip Code</th>
+                        <th>Lat</th>
+                        <th>Long</th>
+                        <th>Country</th>
+                        <th>Description</th>
+                        <th>Photo</th>
+                        <th>Action</th>                 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let l of locationList | async">
+                        <td>#{{l.lid}}</td>
+                        <td>{{l.lname}}</td>
+                        <td>{{l.lzipcode}}</td>
+                        <td>{{l.llat}}</td>
+                        <td>{{l.llong}}</td>
+                        <td>{{l.lcountry}}</td>
+                        <td>{{l.ldescription}}</td>
+                        <td>{{l.lphoto}}</td>
+                        <td>
+                            <button class="btn btn-success" (click)="updateLocation(l.lid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteLocation(l.lid)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

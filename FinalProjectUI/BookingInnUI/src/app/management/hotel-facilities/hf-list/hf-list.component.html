@@ -1,0 +1,33 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">       
+            <h1 class="text-center">Hotel Facilities</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Facilities</th>
+                        <th>Description</th>
+                        <th>Keyword</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hf of hotelFacilitiesList | async">
+                        <td>#{{hf.hfacid}}</td>
+                        <td>{{hf.hfacname}}</td>
+                        <td>{{hf.hfacdiscription}}</td>
+                        <td>{{hf.hfackeyword}}</td>
+                        <td>
+                            <button class="btn btn-success" (click)="updateHotelFacilities(hf.hfacid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteHotelFacilities(hf.hfacid)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

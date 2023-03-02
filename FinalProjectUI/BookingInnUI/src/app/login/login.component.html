@@ -1,0 +1,54 @@
+<section>
+  <div class="bootstrap-warpper">
+  <div class="container">
+    <div class="row mt-5" style="margin-top: 150px;">
+      <div class="col-md-6 offset-md-3">
+
+        <div class=" fadeInDown " style="margin-top: 100px;" *ngIf="loginCard">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+            <br>
+            <h3 class="text-center mt-5"> Login </h3>
+            <hr>
+            <!-- Login Form -->
+            <form (ngSubmit)="login()">
+              <input type="text" class="fadeIn third" name="email" placeholder="Email"[(ngModel)]="b.email"><br>
+              <input type="text" id="password" class="fadeIn third" name="upassword" placeholder="Password"[(ngModel)]="user.password"><br>
+              <button type="submit"  class="btn btn-primary">Login</button>
+            </form>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+              <a class="underlineHover" href="#">Forgot Password?</a>
+              <p>Are you new? click here <a routerLink="/login" (click)="showRegister()">Register
+                </a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class=" fadeInDown mt-5" *ngIf="registerCard">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+            <br>
+            <h3 class="text-center mt-5"> Registration Form </h3>
+            <hr>
+            <!-- Login Form -->
+            <form (ngSubmit)="formSubmit()">
+              <input type="text" class="fadeIn second" name="firstname" placeholder="First Name" [(ngModel)]="user.firstname">              
+              <input type="text" class="fadeIn third" name="lastname" placeholder="Last Name"[(ngModel)]="user.lastname"><br>
+              <input type="text" class="fadeIn third" name="cell" placeholder="Cell" [(ngModel)]="user.cell"><br>
+              <input type="text" class="fadeIn third" name="email" placeholder="Email"[(ngModel)]="user.email"><br>
+              <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password"[(ngModel)]="user.password"><br>
+              <button type="submit" class="btn btn-primary" >Register</button>
+              <p>Already registered? click here <a routerLink="/login" (click)="showLogin()">Login
+              </a></p>
+            </form>
+            <br>
+            <!-- Remind Passowrd -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>

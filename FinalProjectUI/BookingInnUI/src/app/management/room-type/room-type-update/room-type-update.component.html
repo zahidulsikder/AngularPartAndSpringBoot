@@ -1,0 +1,24 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <div class="col-1 p-3">
+                <button class="btn btn-info" routerLink="/allroomtype">See All</button>
+            </div>
+            <h1 class="text-center">Update Roomtype</h1>
+            <form (ngSubmit)="roomtypeUpdate()">
+                <input type="text" class="form-control" name="hfacname" placeholder="Facilities"
+                    [(ngModel)]="rt.rtName">
+                <input type="text" class="form-control" name="hfacdiscription" placeholder="Description"
+                    [(ngModel)]="rt.rtDescription">
+                <input type="text" class="form-control" name="hfackeyword" placeholder="Keyword"
+                    [(ngModel)]="rt.rtKey">
+                <div class="col-1 p-3">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

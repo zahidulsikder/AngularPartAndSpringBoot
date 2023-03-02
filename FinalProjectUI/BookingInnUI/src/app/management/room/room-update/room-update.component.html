@@ -1,0 +1,65 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <h1 class="text-center">Update Room</h1>
+            <form (ngSubmit)="roomUpdate()" #addroom="ngForm">
+                <div class="row">
+                    <div class="col-6">
+                        <label>Upload Photos: </label>
+                        <input type="file" name="rgallery" ngModel>
+
+                        <label>Select Locaction: </label>
+                        <select class="col-4" class="form-control" 
+                            (ngModelChange)="getLid($event)" name="locatioId" ngModel>
+                            <option *ngFor="let l of locationList | async" value="{{l.lid}}">
+                                {{l.lname}}</option>
+                        </select>
+
+                        <label>Select Hotel: </label>
+                        <select class="col-4" class="form-control" 
+                            (ngModelChange)="getHid($event)" name="hotelId" ngModel>
+                            <option *ngFor="let h of hotelList | async" value="{{h.hid}}">
+                                {{h.hname}}</option>
+                        </select>
+
+                        <label>Room Type: </label>
+                        <select class="col-4 " class="form-control" name="roomTypeId" ngModel>
+                            <option *ngFor="let rt of roomType | async" value="{{rt.rtid}}">
+                                {{rt.rtName}}</option>
+                        </select>
+
+                        <label>Room Facilities: </label>
+                        <select class="col-4 " class="form-control">
+                            <option *ngFor="let rf of roomFacilities | async" name="roomFacilities" ngModel
+                                [ngValue]="rf.rfName">
+                                {{rf.rfName}}</option>
+                        </select>
+                        <label>Room Details: </label>
+                        <textarea class="form-control" name="rdetails" ngModel></textarea>
+                    </div>
+                    <div class="col-6">
+                        <label>Room Number: </label>
+                        <input type="number" class="form-control"  name="rnumber" ngModel>
+                        <label>Room Price: </label>
+                        <input type="number" class="form-control"  name="rprice" ngModel>
+                        <label>Discount: </label>
+                        <input type="number" class="form-control"  name="rdiscount" ngModel>
+                        <label>Room Size: </label>
+                        <input type="number" class="form-control"  name="rsize" ngModel>
+                        <label>Adult Capacity:</label>
+                        <input type="number" class="form-control" name="radultcapacity" ngModel>
+                        <label>Child Capacity:</label>
+                        <input type="number" class="form-control" name="rchildcapacity" ngModel>
+                        
+                    </div>
+                    <div class="col-1 p-3">
+                        <button class="btn btn-info">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">              
+            <h1 class="text-center">All Room</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Images</th>
+                        <th>Room Number</th>
+                        <th>Room Type</th>
+                        <th>Hotel Name</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Size</th>                        
+                        <th>Change Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let r of x">
+                        <td>#{{r.rid}}</td>
+                        <td>{{r.rgallery}}
+                            <img [src]="convertImg(r.imageData)" width="200px"/>
+                        </td>
+                        <td>{{r.rnumber}}</td>
+                        <td>{{r.roomtype.rtName}}</td>
+                        <td>{{r.hotel.hname}}</td>
+                        <td>{{r.location}}</td>
+                        <td>${{r.rprice}}</td>
+                        <td>{{r.rsize}}' sqft</td>
+                        <td>
+                            <!-- <p><button (click)="myFunction(r.rid)" class="btn btn-info">Change Status</button></p>
+                            <div id="changeStatus">Active</div> -->
+                            <button *ngIf="activeRoomBtn" class="btn btn-info" (click)="activeRoom(r.rid)">Active</button>
+                            <button *ngIf="dactiveRoomBtn" class="btn btn-warning" (click)="dactiveRoom(r.rid)">Dactive</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="updateRoom(r.rid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteRoom(r.rid)" >Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

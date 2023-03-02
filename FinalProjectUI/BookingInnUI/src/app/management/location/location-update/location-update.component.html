@@ -1,0 +1,33 @@
+<app-admin-dashboard></app-admin-dashboard> 
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <div class="col-1 p-3">
+                <button class="btn btn-info" routerLink="/alllocation">See All</button>
+            </div>
+            <h1 class="text-center">Update Location</h1>
+            <button class="btn btn-info" routerLink="/alllocation">See All</button>
+            <form (ngSubmit)="locationUpdate()">
+                <input type="text" class="form-control" name="lname" placeholder="Location Name"
+                    [(ngModel)]="l.lname">
+                <input type="text" class="form-control" name="lzipcode" placeholder="Zip Code"
+                    [(ngModel)]="l.lzipcode">
+                <input type="text" class="form-control" name="llat" placeholder="Lat"
+                    [(ngModel)]="l.llat">
+                <input type="text" class="form-control" name="llong" placeholder="Long"
+                    [(ngModel)]="l.llong">
+                <input type="text" class="form-control" name="lcountry" placeholder="Country name"
+                    [(ngModel)]="l.lcountry">
+                <textarea class="form-control" name="ldescription" placeholder="Description"  [(ngModel)]="l.ldescription">
+                </textarea>
+                <input type="file" class="form-control" name="lphoto" placeholder="Photo"
+                    [(ngModel)]="l.lphoto">
+                <div class="col-1 p-3">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <h1 class="text-center">Add Hotel</h1>
+            <form (ngSubmit)="hotelCreate()">
+                <div class="row">
+                    <div class="col-6">
+                        <label>Upload Photos: </label>
+                        <input type="file" [(ngModel)]="hotel.hphoto" name="hphoto">
+                        <label>Select Locaction: </label>
+                        <select class="col-4" class="form-control" [(ngModel)]="locationId"
+                            (ngModelChange)="getLid($event)" name="sdf">
+                            <option *ngFor="let l of locationList | async" name="location.lid" [ngValue]="l.lid">
+                                {{l.lname}}</option>
+                        </select>
+                        <label>Hotel Name: </label>
+                        <input type="text" class="form-control" [(ngModel)]="hotel.hname" name="hname">
+        
+                        <label>Hotel Description: </label>
+                        <textarea class="form-control" [(ngModel)]="hotel.hdescription" name="rdetails"></textarea>
+                        <label>Hotel Address: </label>
+                        <textarea class="form-control" [(ngModel)]="hotel.haddress" name="haddress"></textarea>
+                    </div>
+                    <div class="col-6">
+                        
+                        
+                    </div>
+                    <div class="col-1 p-3">
+                        <button class="btn btn-info">Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
